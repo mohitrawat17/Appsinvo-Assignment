@@ -8,8 +8,6 @@ import Slider from "react-slick";
 const Venues = () => {
   const { data } = useContext(DataContext);
 
-  console.log(data?.coachesData);
-
   const settings = {
     dots: true,
     infinite: true,
@@ -37,16 +35,16 @@ const Venues = () => {
   };
 
   return (
-    <section class="mt-4 pt-4" id="ourprograms">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12 mb-3 text-center">
-            <h3 class="sec-title">Venues Near Me</h3>
+    <section className="mt-4 pt-4" id="ourprograms">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-12 mb-3 text-center">
+            <h3 className="sec-title">Venues Near Me</h3>
           </div>
-          <div class="col-sm-12 col-md-12 col-lg-12 mb-3 position-relative">
+          <div className="col-sm-12 col-md-12 col-lg-12 mb-3 position-relative">
             <Sports_data />
-            <div class="tab-content" id="pills-tabContent">
-              <div class="slider programIMages sportSlider">
+            <div className="tab-content" id="pills-tabContent">
+              <div className="slider programIMages sportSlider">
                 <Slider {...settings}>
                   {data?.venueData &&
                     data?.venueData.length > 0 &&
@@ -54,23 +52,23 @@ const Venues = () => {
                       return (
                         <div
                           key={data?._id}
-                          class="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox"
+                          className="bg-white p-2 text-capitalize programs-colles vanuesNearMeBox"
                         >
-                          <div class="position-relative">
-                            <Link class="text-dark" href="#">
+                          <div className="position-relative">
+                            <Link className="text-dark" href="#">
                               <img
                                 src={data?.image[0]?.image}
-                                class="img-fluid tabImage"
+                                className="img-fluid tabImage"
                                 alt=""
                               />
                             </Link>
-                            <div class="venueBoxIcons">
-                              <span class="votesRatingBg">
+                            <div className="venueBoxIcons">
+                              <span className="votesRatingBg">
                                 {parseInt(data?.rating)?.toFixed(0)}
                                 {/* <img
                                       src="/images/star.png"
                                       alt=""
-                                      class="start"
+                                      className="start"
                                     /> */}
                               </span>
                               {data?.review} votes{" "}
@@ -78,22 +76,22 @@ const Venues = () => {
                             <img
                               src="/images/Favoriteunselected.png"
                               alt=""
-                              class="d-none"
+                              className="d-none"
                             />
                           </div>
-                          <div class="text-start mt-3">
-                            <div class="eventCreater">
+                          <div className="text-start mt-3">
+                            <div className="eventCreater">
                               <span>
-                                <p class="mb-0 fw-bold ellips1Line w-100 text-dark">
+                                <p className="mb-0 fw-bold ellips1Line w-100 text-dark">
                                   {data?.name}
                                 </p>
-                                <p class="text-dark ellips1Line w-100">
+                                <p className="text-dark ellips1Line w-100">
                                   {data?.sports[0]?.sport}
                                 </p>
                               </span>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-                              <span class="ellips1Line w-100 text-dark">
+                            <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
+                              <span className="ellips1Line w-100 text-dark">
                                 {data?.address}
                               </span>
                               <a
@@ -102,12 +100,12 @@ const Venues = () => {
                                   data?.address
                                 }
                                 target="_blank"
-                                class="clubKMS box-shadow"
+                                className="clubKMS box-shadow"
                               >
                                 <img
                                   src="/images/map_pins_icon.png"
                                   alt=""
-                                  class="map_pins_icon"
+                                  className="map_pins_icon"
                                 />
                                 1032.13Km
                               </a>
@@ -118,7 +116,7 @@ const Venues = () => {
                     })}
                 </Slider>
               </div>
-              <Link class="viewAll theme-color" href="#">
+              <Link className="viewAll theme-color" href="#">
                 View All
               </Link>
             </div>

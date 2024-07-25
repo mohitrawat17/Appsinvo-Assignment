@@ -8,6 +8,7 @@ import Footer from "./_components/footer";
 import Success_and_achievements from "./_components/success_and_achievements";
 import Online_sessions from "./_components/online_sessions";
 import Why_choose_us from "./_components/why_choose_us";
+import Events from "./_components/events";
 
 
 export default function Home() {
@@ -16,8 +17,9 @@ export default function Home() {
         <Header />
         <Professional_training />
         <Venues/>
-        <Online_sessions/>
+        <Events/>
         <Why_choose_us/>
+        <Online_sessions/>
         <Success_and_achievements/>
         <Footer/>
       </DataProvider>

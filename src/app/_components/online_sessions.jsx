@@ -32,19 +32,19 @@ const Online_sessions = () => {
   };
 
   return (
-    <section class="mt-4 pt-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12 mb-2 mb-md-5 text-center">
-            <h3 class="sec-title">Online Session</h3>
+    <section className="mt-4 pt-4">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-12 mb-2 mb-md-5 text-center">
+            <h3 className="sec-title">Online Session</h3>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12 mb-4">
-            <div class="slick-slider EventNewsSlider sportSlider slick-initialized">
-              <div class="slick-list">
+        <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-12 mb-4">
+            <div className="slick-slider EventNewsSlider sportSlider slick-initialized">
+              <div className="slick-list">
                 <div
-                  class="slick-track"
+                  className="slick-track"
                 style={{width:"1296",opacity:'1',transform:'translate3d(0px, 0px, 0px)'}}
 
                 >
@@ -56,7 +56,7 @@ const Online_sessions = () => {
                           <div
                           key={data?._id}
                             data-index="0"
-                            class="slick-slide slick-active slick-current"
+                            className="slick-slide slick-active slick-current"
                             tabindex="-1"
                             aria-hidden="false"
                             style={{outline:"none",width:"432px"}}
@@ -71,10 +71,10 @@ const Online_sessions = () => {
                                 <a
                                   href={data?.link}
                                   target="_blank"
-                                  class="text-dark"
+                                  className="text-dark"
                                 >
-                                  <div class="">
-                                    <div class="eventGridFlex position-relative">
+                                  <div className="">
+                                    <div className="eventGridFlex position-relative">
                                       <iframe
                                         src={data?.link}
                                         title="Use this three-letter word to Stop Trash-Talking to yourself! - Coach Amreen"

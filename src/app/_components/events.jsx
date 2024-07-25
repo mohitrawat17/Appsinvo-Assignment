@@ -1,417 +1,400 @@
-import React from 'react'
+"use client";
+import React, { useContext, useState } from "react";
+import { DataContext } from "../assets/globalContext";
+import Slider from "react-slick";
 
 const Events = () => {
+  const { data } = useContext(DataContext);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024, // adjust the breakpoint as needed
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768, // adjust the breakpoint as needed
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
+  const settings1 = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024, // adjust the breakpoint as needed
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768, // adjust the breakpoint as needed
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
+  const [selectedTab, setSelectedTab] = useState(0);
+
   return (
-    <section class="pt-4" id="Offerevents">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12 mb-3 text-center">
-          <h3 class="sec-title">Offers and Sport Events</h3>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-12 mb-3 text-center">
-          <ul
-            class="nav nav-pills mb-3 justify-content-center tabsnew lineAlign"
-            id="pills-tab"
-            role="tablist"
-          >
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link active text-capitalize d-grid"
-                type="button"
-                id="pills-offer-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-offer"
-              >
-                offers
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link text-capitalize d-grid"
-                type="button"
-                id="pills-events-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-events"
-              >
-                events
-              </button>
-            </li>
-          </ul>
-          <div class="tab-content" id="pills-tabContent">
-            <div
-              class="tab-pane fade show active"
-              id="pills-offer"
-              role="tabpanel"
-              aria-labelledby="pills-offer-tab"
+    <section className="pt-4" id="Offerevents">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-12 mb-3 text-center">
+            <h3 className="sec-title">Offers and Sport Events</h3>
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-12 mb-3 text-center">
+            <ul
+              className="nav nav-pills mb-3 justify-content-center tabsnew lineAlign"
+              id="pills-tab"
+              role="tablist"
             >
-              <div id="dynamicDots" class="position-relative">
-                <div class="slider EventNewsSlider sportSlider">
-                  <div>
-                    <div
-                      tabindex="-1"
-                      style="width: 100%; display: inline-block"
-                    >
-                      <div class="">
-                        <div class="eventGridFlex">
-                          <img
-                            src="assets/img/offerImage1.png"
-                            class="img-fluid eventTabImg"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      tabindex="-1"
-                      style="width: 100%; display: inline-block"
-                    >
-                      <div class="">
-                        <div class="eventGridFlex">
-                          <img
-                            src="assets/img/offerImage2.png"
-                            class="img-fluid eventTabImg"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      tabindex="-1"
-                      style="width: 100%; display: inline-block"
-                    >
-                      <div class="">
-                        <div class="eventGridFlex">
-                          <img
-                            src="assets/img/offerImage3.png"
-                            class="img-fluid eventTabImg"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      tabindex="-1"
-                      style="width: 100%; display: inline-block"
-                    >
-                      <div class="">
-                        <div class="eventGridFlex">
-                          <img
-                            src="assets/img/offerImage1.png"
-                            class="img-fluid eventTabImg"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      tabindex="-1"
-                      style="width: 100%; display: inline-block"
-                    >
-                      <div class="">
-                        <div class="eventGridFlex">
-                          <img
-                            src="assets/img/offerImage2.png"
-                            class="img-fluid eventTabImg"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      tabindex="-1"
-                      style="width: 100%; display: inline-block"
-                    >
-                      <div class="">
-                        <div class="eventGridFlex">
-                          <img
-                            src="assets/img/offerImage3.png"
-                            class="img-fluid eventTabImg"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
+              <li className="nav-item" role="presentation">
+                <button
+                  class={`nav-link text-capitalize d-grid ${
+                    selectedTab ? "" : "active"
+                  }`}
+                  type="button"
+                  id="pills-offer-tab"
+                  onClick={() => setSelectedTab(0)}
+                >
+                  offers
+                </button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button
+                  class={`nav-link text-capitalize d-grid ${
+                    selectedTab ? "active" : ""
+                  }`}
+                  type="button"
+                  id="pills-events-tab"
+                  onClick={() => setSelectedTab(1)}
+                >
+                  events
+                </button>
+              </li>
+            </ul>
+            <div className="tab-content" id="pills-tabContent">
+              <div
+                class={`tab-pane fade ${
+                  selectedTab === 0 ? "show active" : ""
+                }`}
+                id="pills-offer"
+                role="tabpanel"
+                aria-labelledby="pills-offer-tab"
+              >
+                <div id="dynamicDots" className="position-relative">
+                  <div className="slider EventNewsSlider sportSlider">
+                    <Slider {...settings}>
+                      {data?.offers &&
+                        data?.offers.length > 0 &&
+                        data?.offers.map((data) => {
+                          return (
+                            <div key={data?._id}>
+                              <div
+                                tabindex="-1"
+                                style={{
+                                  width: "100%",
+                                  display: "inline-block",
+                                }}
+                              >
+                                <div className="">
+                                  <div className="eventGridFlex">
+                                    <img
+                                      src={data?.image}
+                                      className="img-fluid eventTabImg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                    </Slider>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="tab-pane fade"
-              id="pills-events"
-              role="tabpanel"
-              aria-labelledby="pills-events-tab"
-            >
-              <div id="dynamicDots" class="position-relative">
-                <div class="slider EventNewsSlider sportSlider">
-                  <div class="">
-                    <div class="AlreadyEvent">
-                      <div class="AlreadyEventBox">
-                        <img
-                          src="assets/img/dummyImage.png"
-                          alt=""
-                          class="eventImg"
-                        />
-
-                        <a href="#" class="text-dark">
-                          <h6 class="mb-0 nameAddressEllip">
-                            void acadamy
-                          </h6>
-                          <p class="mb-0 nameAddressEllip">Kandivali</p>
-                        </a>
-                        <span class="position-relative Sidetag">
-                          <img src="assets/img/Sidetag.png" alt="" />
-                          <span class="SidetagText">
-                            Booked User: 11/20
-                          </span>
-                        </span>
-                      </div>
-                      <div class="eventCreateDetail">
-                        <div class="row px-1 align-items-center">
-                          <div
-                            class="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne"
-                          >
+              <div
+                class={`tab-pane fade ${
+                  selectedTab === 1 ? "show active" : ""
+                }`}
+                id="pills-events"
+                role="tabpanel"
+                aria-labelledby="pills-events-tab"
+              >
+                <div id="dynamicDots" className="position-relative">
+                  <div className="slider EventNewsSlider sportSlider">
+                    <Slider {...settings1}>
+                      <div className="">
+                        <div className="AlreadyEvent">
+                          <div className="AlreadyEventBox">
                             <img
-                              src="assets/img/employe.png"
-                              class="rounded-circle eventCreaterIcon"
+                              src="/images/dummyImage.png"
                               alt=""
+                              className="eventImg"
                             />
-                            <span>
-                              <p class="mb-0">Created by</p>
-                              <p class="mb-0 fw-bold">lav kush</p>
+
+                            <a href="#" className="text-dark">
+                              <h6 className="mb-0 nameAddressEllip">
+                                void acadamy
+                              </h6>
+                              <p className="mb-0 nameAddressEllip">Kandivali</p>
+                            </a>
+                            <span className="position-relative Sidetag">
+                              <img src="/images/Sidetag.png" alt="" />
+                              <span className="SidetagText">
+                                Booked User: 11/20
+                              </span>
                             </span>
                           </div>
-                          <div
-                            class="col-sm-12 col-md-6 col-lg-4 vercalLIne"
-                          >
-                            <span>
-                              <p class="mb-0">Available Sports</p>
-                              <p class="mb-0 fw-bold">Cricket</p>
-                            </span>
+                          <div className="eventCreateDetail">
+                            <div className="row px-1 align-items-center">
+                              <div className="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne">
+                                <img
+                                  src="/images/employe.png"
+                                  className="rounded-circle eventCreaterIcon"
+                                  alt=""
+                                />
+                                <span>
+                                  <p className="mb-0">Created by</p>
+                                  <p className="mb-0 fw-bold">lav kush</p>
+                                </span>
+                              </div>
+                              <div className="col-sm-12 col-md-6 col-lg-4 vercalLIne">
+                                <span>
+                                  <p className="mb-0">Available Sports</p>
+                                  <p className="mb-0 fw-bold">Cricket</p>
+                                </span>
+                              </div>
+                              <div className="col-sm-12 col-md-6 col-lg-4">
+                                <span>
+                                  <p className="mb-0">Date & Time</p>
+                                  <p className="mb-0 fw-bold">Dec 20, 2022</p>
+                                  <p className="mb-0 fw-bold">10:00am - 11:00pm</p>
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                          <div class="col-sm-12 col-md-6 col-lg-4">
+                          <div className="paymentJoin">
                             <span>
-                              <p class="mb-0">Date & Time</p>
-                              <p class="mb-0 fw-bold">Dec 20, 2022</p>
-                              <p class="mb-0 fw-bold">10:00am - 11:00pm</p>
+                              <p className="mb-0">Payment required</p>
+                              <p className="mb-0 theme-color fw-bold">
+                                <i className="fa fa-inr"></i> 35 /-
+                              </p>
                             </span>
+                            <button className="joinUsBtn">Join Us</button>
                           </div>
                         </div>
                       </div>
-                      <div class="paymentJoin">
-                        <span>
-                          <p class="mb-0">Payment required</p>
-                          <p class="mb-0 theme-color fw-bold">
-                            <i class="fa fa-inr"></i> 35 /-
-                          </p>
-                        </span>
-                        <button class="joinUsBtn">Join Us</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="AlreadyEvent">
-                      <div class="AlreadyEventBox">
-                        <img
-                          src="assets/img/dummyImage.png"
-                          alt=""
-                          class="eventImg"
-                        />
-
-                        <a href="#" class="text-dark">
-                          <h6 class="mb-0 nameAddressEllip">
-                            void acadamy
-                          </h6>
-                          <p class="mb-0 nameAddressEllip">Kandivali</p>
-                        </a>
-                        <span class="position-relative Sidetag">
-                          <img src="assets/img/Sidetag.png" alt="" />
-                          <span class="SidetagText">
-                            Booked User: 11/20
-                          </span>
-                        </span>
-                      </div>
-                      <div class="eventCreateDetail">
-                        <div class="row px-1 align-items-center">
-                          <div
-                            class="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne"
-                          >
+                      <div className="">
+                        <div className="AlreadyEvent">
+                          <div className="AlreadyEventBox">
                             <img
-                              src="assets/img/employe.png"
-                              class="rounded-circle eventCreaterIcon"
+                              src="/images/dummyImage.png"
                               alt=""
+                              className="eventImg"
                             />
-                            <span>
-                              <p class="mb-0">Created by</p>
-                              <p class="mb-0 fw-bold">lav kush</p>
+
+                            <a href="#" className="text-dark">
+                              <h6 className="mb-0 nameAddressEllip">
+                                void acadamy
+                              </h6>
+                              <p className="mb-0 nameAddressEllip">Kandivali</p>
+                            </a>
+                            <span className="position-relative Sidetag">
+                              <img src="/images/Sidetag.png" alt="" />
+                              <span className="SidetagText">
+                                Booked User: 11/20
+                              </span>
                             </span>
                           </div>
-                          <div
-                            class="col-sm-12 col-md-6 col-lg-4 vercalLIne"
-                          >
-                            <span>
-                              <p class="mb-0">Available Sports</p>
-                              <p class="mb-0 fw-bold">Cricket</p>
-                            </span>
+                          <div className="eventCreateDetail">
+                            <div className="row px-1 align-items-center">
+                              <div className="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne">
+                                <img
+                                  src="/images/employe.png"
+                                  className="rounded-circle eventCreaterIcon"
+                                  alt=""
+                                />
+                                <span>
+                                  <p className="mb-0">Created by</p>
+                                  <p className="mb-0 fw-bold">lav kush</p>
+                                </span>
+                              </div>
+                              <div className="col-sm-12 col-md-6 col-lg-4 vercalLIne">
+                                <span>
+                                  <p className="mb-0">Available Sports</p>
+                                  <p className="mb-0 fw-bold">Cricket</p>
+                                </span>
+                              </div>
+                              <div className="col-sm-12 col-md-6 col-lg-4">
+                                <span>
+                                  <p className="mb-0">Date & Time</p>
+                                  <p className="mb-0 fw-bold">Dec 20, 2022</p>
+                                  <p className="mb-0 fw-bold">10:00am - 11:00pm</p>
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                          <div class="col-sm-12 col-md-6 col-lg-4">
+                          <div className="paymentJoin">
                             <span>
-                              <p class="mb-0">Date & Time</p>
-                              <p class="mb-0 fw-bold">Dec 20, 2022</p>
-                              <p class="mb-0 fw-bold">10:00am - 11:00pm</p>
+                              <p className="mb-0">Payment required</p>
+                              <p className="mb-0 theme-color fw-bold">
+                                <i className="fa fa-inr"></i> 35 /-
+                              </p>
                             </span>
+                            <button className="joinUsBtn">Join Us</button>
                           </div>
                         </div>
                       </div>
-                      <div class="paymentJoin">
-                        <span>
-                          <p class="mb-0">Payment required</p>
-                          <p class="mb-0 theme-color fw-bold">
-                            <i class="fa fa-inr"></i> 35 /-
-                          </p>
-                        </span>
-                        <button class="joinUsBtn">Join Us</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="AlreadyEvent">
-                      <div class="AlreadyEventBox">
-                        <img
-                          src="assets/img/dummyImage.png"
-                          alt=""
-                          class="eventImg"
-                        />
-
-                        <a href="#" class="text-dark">
-                          <h6 class="mb-0 nameAddressEllip">
-                            void acadamy
-                          </h6>
-                          <p class="mb-0 nameAddressEllip">Kandivali</p>
-                        </a>
-                        <span class="position-relative Sidetag">
-                          <img src="assets/img/Sidetag.png" alt="" />
-                          <span class="SidetagText">
-                            Booked User: 11/20
-                          </span>
-                        </span>
-                      </div>
-                      <div class="eventCreateDetail">
-                        <div class="row px-1 align-items-center">
-                          <div
-                            class="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne"
-                          >
+                      <div className="">
+                        <div className="AlreadyEvent">
+                          <div className="AlreadyEventBox">
                             <img
-                              src="assets/img/employe.png"
-                              class="rounded-circle eventCreaterIcon"
+                              src="/images/dummyImage.png"
                               alt=""
+                              className="eventImg"
                             />
-                            <span>
-                              <p class="mb-0">Created by</p>
-                              <p class="mb-0 fw-bold">lav kush</p>
+
+                            <a href="#" className="text-dark">
+                              <h6 className="mb-0 nameAddressEllip">
+                                void acadamy
+                              </h6>
+                              <p className="mb-0 nameAddressEllip">Kandivali</p>
+                            </a>
+                            <span className="position-relative Sidetag">
+                              <img src="/images/Sidetag.png" alt="" />
+                              <span className="SidetagText">
+                                Booked User: 11/20
+                              </span>
                             </span>
                           </div>
-                          <div
-                            class="col-sm-12 col-md-6 col-lg-4 vercalLIne"
-                          >
-                            <span>
-                              <p class="mb-0">Available Sports</p>
-                              <p class="mb-0 fw-bold">Cricket</p>
-                            </span>
+                          <div className="eventCreateDetail">
+                            <div className="row px-1 align-items-center">
+                              <div className="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne">
+                                <img
+                                  src="/images/employe.png"
+                                  className="rounded-circle eventCreaterIcon"
+                                  alt=""
+                                />
+                                <span>
+                                  <p className="mb-0">Created by</p>
+                                  <p className="mb-0 fw-bold">lav kush</p>
+                                </span>
+                              </div>
+                              <div className="col-sm-12 col-md-6 col-lg-4 vercalLIne">
+                                <span>
+                                  <p className="mb-0">Available Sports</p>
+                                  <p className="mb-0 fw-bold">Cricket</p>
+                                </span>
+                              </div>
+                              <div className="col-sm-12 col-md-6 col-lg-4">
+                                <span>
+                                  <p className="mb-0">Date & Time</p>
+                                  <p className="mb-0 fw-bold">Dec 20, 2022</p>
+                                  <p className="mb-0 fw-bold">10:00am - 11:00pm</p>
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                          <div class="col-sm-12 col-md-6 col-lg-4">
+                          <div className="paymentJoin">
                             <span>
-                              <p class="mb-0">Date & Time</p>
-                              <p class="mb-0 fw-bold">Dec 20, 2022</p>
-                              <p class="mb-0 fw-bold">10:00am - 11:00pm</p>
+                              <p className="mb-0">Payment required</p>
+                              <p className="mb-0 theme-color fw-bold">
+                                <i className="fa fa-inr"></i> 35 /-
+                              </p>
                             </span>
+                            <button className="joinUsBtn">Join Us</button>
                           </div>
                         </div>
                       </div>
-                      <div class="paymentJoin">
-                        <span>
-                          <p class="mb-0">Payment required</p>
-                          <p class="mb-0 theme-color fw-bold">
-                            <i class="fa fa-inr"></i> 35 /-
-                          </p>
-                        </span>
-                        <button class="joinUsBtn">Join Us</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="AlreadyEvent">
-                      <div class="AlreadyEventBox">
-                        <img
-                          src="assets/img/dummyImage.png"
-                          alt=""
-                          class="eventImg"
-                        />
-
-                        <a href="#" class="text-dark">
-                          <h6 class="mb-0 nameAddressEllip">
-                            void acadamy
-                          </h6>
-                          <p class="mb-0 nameAddressEllip">Kandivali</p>
-                        </a>
-                        <span class="position-relative Sidetag">
-                          <img src="assets/img/Sidetag.png" alt="" />
-                          <span class="SidetagText">
-                            Booked User: 11/20
-                          </span>
-                        </span>
-                      </div>
-                      <div class="eventCreateDetail">
-                        <div class="row px-1 align-items-center">
-                          <div
-                            class="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne"
-                          >
+                      <div className="">
+                        <div className="AlreadyEvent">
+                          <div className="AlreadyEventBox">
                             <img
-                              src="assets/img/employe.png"
-                              class="rounded-circle eventCreaterIcon"
+                              src="/images/dummyImage.png"
                               alt=""
+                              className="eventImg"
                             />
-                            <span>
-                              <p class="mb-0">Created by</p>
-                              <p class="mb-0 fw-bold">lav kush</p>
+
+                            <a href="#" className="text-dark">
+                              <h6 className="mb-0 nameAddressEllip">
+                                void acadamy
+                              </h6>
+                              <p className="mb-0 nameAddressEllip">Kandivali</p>
+                            </a>
+                            <span className="position-relative Sidetag">
+                              <img src="/images/Sidetag.png" alt="" />
+                              <span className="SidetagText">
+                                Booked User: 11/20
+                              </span>
                             </span>
                           </div>
-                          <div
-                            class="col-sm-12 col-md-6 col-lg-4 vercalLIne"
-                          >
-                            <span>
-                              <p class="mb-0">Available Sports</p>
-                              <p class="mb-0 fw-bold">Cricket</p>
-                            </span>
+                          <div className="eventCreateDetail">
+                            <div className="row px-1 align-items-center">
+                              <div className="col-sm-12 col-md-6 col-lg-4 eventCreater vercalLIne">
+                                <img
+                                  src="/images/employe.png"
+                                  className="rounded-circle eventCreaterIcon"
+                                  alt=""
+                                />
+                                <span>
+                                  <p className="mb-0">Created by</p>
+                                  <p className="mb-0 fw-bold">lav kush</p>
+                                </span>
+                              </div>
+                              <div className="col-sm-12 col-md-6 col-lg-4 vercalLIne">
+                                <span>
+                                  <p className="mb-0">Available Sports</p>
+                                  <p className="mb-0 fw-bold">Cricket</p>
+                                </span>
+                              </div>
+                              <div className="col-sm-12 col-md-6 col-lg-4">
+                                <span>
+                                  <p className="mb-0">Date & Time</p>
+                                  <p className="mb-0 fw-bold">Dec 20, 2022</p>
+                                  <p className="mb-0 fw-bold">10:00am - 11:00pm</p>
+                                </span>
+                              </div>
+                            </div>
                           </div>
-                          <div class="col-sm-12 col-md-6 col-lg-4">
+                          <div className="paymentJoin">
                             <span>
-                              <p class="mb-0">Date & Time</p>
-                              <p class="mb-0 fw-bold">Dec 20, 2022</p>
-                              <p class="mb-0 fw-bold">10:00am - 11:00pm</p>
+                              <p className="mb-0">Payment required</p>
+                              <p className="mb-0 theme-color fw-bold">
+                                <i className="fa fa-inr"></i> 35 /-
+                              </p>
                             </span>
+                            <button className="joinUsBtn">Join Us</button>
                           </div>
                         </div>
                       </div>
-                      <div class="paymentJoin">
-                        <span>
-                          <p class="mb-0">Payment required</p>
-                          <p class="mb-0 theme-color fw-bold">
-                            <i class="fa fa-inr"></i> 35 /-
-                          </p>
-                        </span>
-                        <button class="joinUsBtn">Join Us</button>
-                      </div>
-                    </div>
+                    </Slider>
                   </div>
                 </div>
               </div>
@@ -419,9 +402,8 @@ const Events = () => {
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  )
-}
+    </section>
+  );
+};
 
-export default Events
+export default Events;

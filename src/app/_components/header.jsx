@@ -59,7 +59,7 @@ const Header = () => {
                     placeholder="Current Location"
                     className="form-control CurrentLocation"
                     name="location"
-                    value="Agra, Uttar Pradesh"
+                    defaultValue="Agra, Uttar Pradesh"
                   />
                 </div>
                 <img
