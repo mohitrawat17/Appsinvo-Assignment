@@ -14,6 +14,8 @@ import "./css/app.css";
 import "./css/bootstrap.css";
 import "./css/intlTelInput.css";
 import "./css/user.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 // import "./css/slick.css";
 export const metadata = {
   title: "Game Hunt",

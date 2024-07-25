@@ -4417,28 +4417,27 @@ li.navbar-items{
 }
 
 
+.slick-prev:before, .slick-next:before {
+    font-family: 'FontAwesome';
+    font-size: 16px !important; /* Adjust this value to decrease the size */
+    color: red !important; /* Change this to your preferred color */
+}
 
-.slick-next
-{
-    font-size: 0;
-    line-height: 0;
+.slick-dots li button:before {
+    font-size: 0px !important; /* Adjust the size of the dots */
+    color: red !important;
+   width: 10px !important;
+   height: 10px !important;
+}
 
-    position: absolute;
-    top: 50%;
+/* Active dot style */
+.slick-dots li.slick-active button:before {
+    color: red !important;
+    font-size: 0px !important;
+    width: 10px !important;
+   height: 10px !important;
+}
 
-    display: block;
-
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-
-    cursor: pointer;
-
-    color: transparent;
-    border: none;
-    outline: none;
-    background: transparent;
+.slick-dots li{
+    margin: 0 !important;
 }
