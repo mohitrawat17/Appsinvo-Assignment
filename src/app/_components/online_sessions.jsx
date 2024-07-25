@@ -23,7 +23,7 @@ const Online_sessions = () => {
         },
       },
       {
-        breakpoint: 768, // adjust the breakpoint as needed
+        breakpoint: 576, // adjust the breakpoint as needed
         settings: {
           slidesToShow: 1,
         },
